@@ -160,7 +160,7 @@ html li {
     
     position: relative;
 } 
-#slider .slider-img {
+#slider > .slider-img {
     width: 100%;
     /* position: relative; */
 }
@@ -170,8 +170,8 @@ html li {
     min-width: 100%;
     text-align: center;
     bottom: 38px;
-
     position: absolute;
+    z-index: 1;
 }
 
 #slider .text-heading {
