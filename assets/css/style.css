@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Common */
+html {
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+html li {
+    list-style-type: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after { /* dùng thẻ elements giả trong css thay cho thẻ thật trong html */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.column {
+    display: inline-block;
+    float: left;
+}
+
+.column-third {
+    width: calc(100% / 3);
+    padding: 0 8px 0 8px;
+}
+
+.column-haft {
+    width: calc(100% / 2);
+}
+
+.column-full {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.margin-top8 {
+    margin-top: 8px !important;
+}
+
+.margin-top16 {
+    margin-top: 16px !important;
+} 
+
+/* Main */
+#main {
+
+} 
+
+#header {
+    background-color: #000;
+    height: 46px;
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#nav > li {
+    display: inline-block;
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0px 24px;
+    display: block;
+}
+
+#nav > li:hover > a ,#nav .subnav > li:hover > a {
+    color:#000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    left: 0;
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    display: none; */
+}
+
+
+#nav .subnav li a {
+    line-height: 38px;
+    padding: 0px 16px;
+    min-width: 160px;
+    color: #000;
+}
+
+#nav > li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav > li {
+    display: block;
+}
+
+#nav .subnav {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    display: none;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#header .search-btn {
+    display: inline-block;
+    float: right;
+}
+#header .search-icon {
+    color: #fff;
+    line-height: 46px;
+    font-size: 18px;
+    font-weight: 1000;
+    padding: 0px 18px;
+}
+
+#header > .search-btn:hover i {
+    background-color: #f44336;
+    display: block;
+    cursor: pointer;
+}
+
+#slider {
+    margin-top: 46px;
+    padding-top: 50%; /* tương đương padding-top: 50%; */
+    background: url('/assets/img/slider/la.jpg') top center / cover no-repeat;
+    /* background-image: url("/assets/img/slider/la.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; */
+    
+    
+    position: relative;
+} 
+/* #slider .slider-img {
+    width: 100%;
+    position: relative;
+} */
+
+#slider .text-slider {
+    color: #fff;
+    min-width: 100%;
+    text-align: center;
+    bottom: 38px;
+
+    position: absolute;
+}
+
+#slider .text-heading {
+    font-weight: 450;
+    font-family: "Segoe UI",Arial,sans-serif;
+    margin-bottom: 25px;
+}
+
+#slider .text-description {
+    font-weight: bolder;
+    font-family: Lato, sans-serif;
+    /* margin-top: 25px; */
+}
+
+#nav .icon-down {
+    font-size: 13px;
+}
+
+.
+
+#content {
+
+} 
+/* content-section */
+#content .content-section {
+    width: 800px;
+    padding: 64px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    /* ->> khi cho margin-left = margin-right = auto thì cả cái thẻ div đó tự động căn giữa theo margin */
+}
+
+#content .section-heading ,#content .section-sub-heading {
+    text-align: center;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px; /* dùng để các chữ trong 1 câu cách xa nhau */
+}
+
+#content .section-sub-heading {
+    font-style: italic;
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    margin: 25px 0 20px 0;
+    opacity: 0.6; /* điều chỉnh độ mờ của chữ */
+}
+
+#content .about-text {
+    font-size: 15px;
+    text-align: justify; /* căn đều 2 bên */
+    line-height: 1.4; /* hoặc ta dùng line-height: 22.5px; */
+}
+
+#content .member-list {
+    margin-top: 48px;
+    text-align: center;
+    /* overflow: hidden; */
+}
+
+#content .member-name {
+    font-size: 15px;
+}
+
+/* #content .member-item {
+    display: inline-block;
+    float: left; khi ta thêm thuộc tính float vào tất cả các phần tử thẻ trong thẻ div cha thì thẻ div cha nó sẽ bị co lại sang 1 không gian khác ,tức là bị nhỏ lại và không ôm các thẻ con trong đó nữa -> cách khắc phục ta dùng cho thẻ cha 1 thuộc tính là overflow: hidden; 
+    hoặc ta dùng thuộc tính cho thẻ class clear:both; là dùng chung tương tự css cho thẻ html 
+    width: calc(100% / 3);
+} */
+
+#content .member-img {
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 10px; /* thuộc tính tạo góc bo bằng border */
+}
+
+/* tour-section */
+.text-white {
+    color: #fff !important;
+}
+
+.tour-section {
+    background-color: #000;
+    /* background: #000; */
+}
+
+.tickets-list {
+    margin-top: 40px;
+    background-color: #fff;
+}
+
+.tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+
+.tickets-list li .sold-out {
+    background-color: #f44336;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.tickets-list li .quantity {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    /* padding: 2px 8px; */
+    float: right;
+    margin-right: 15px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+}
+
+/* places */
+
+.places-list {
+    margin-top: 32px;
+    margin-bottom: 48px;
+    /* margin-right: -8px;
+    margin-left: -8px; */
+    
+}
+
+/* .place-item {
+    display: inline-block;
+    float: left; do cái thẻ img có kích thước lớn hơn thẻ div chứa nó và mặc định thẻ img ko tự co lại kích thước ảnh bằng với kích thước thẻ div cha chứa nó nên để giải quyết ta dùng thuộc tính width: 100%; để cho thẻ img có kích thước bằng với kích thước của thẻ div cha chứa nó
+    width: calc(100% / 3); 
+} */
+
+.place-img {
+    width: calc(100%);
+    display: block;
+}
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-body {
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.place-heading {
+    margin-top: -5px;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.place-time{
+    margin-top: 15px;
+    opacity: 0.6;
+    /* color: #757575; */
+}
+
+.place-description{
+    margin-top: 15px;
+}
+
+.place-buy-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 16px;
+    margin-top: 15px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+
+.place-buy-btn:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+
+/* contact form */
+
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {/* Selector nâng cao */
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    outline: none; /* dùng để bỏ cái border bên ngoài tương tự với border: none; */
+}
+
+.contact-form .input-form {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.contact-form .form-submit-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-family: Lato, sans-serif;
+    float: right;
+}
+
+.contact-form .form-submit-btn:hover {
+    color: #000;
+    background: #ccc;
+    cursor: pointer;
+}
+
+/* Footer */
+
+
+.contact-map {
+    width: calc(100%);
+}
+
+#footer {
+
+} 
+
+#footer .social-list {
+    padding: 64px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    /* ->> khi cho margin-left = margin-right = auto thì cả cái thẻ div đó tự động căn giữa theo margin */
+    text-align: center;
+    opacity: 0.6;
+}
+
+#footer .social-list > a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #3b3b3b;
+}
+
+#footer .Copyright , .Copyright a {
+    color: #3b3b3b;
+    font-size: 17px;
+    margin-top: 18px;
+}
+
+
+
+                        
+
+
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    align-items: center; /* thẻ con nằm giữa chiều cao của thẻ cha */
+    justify-content: center; /* thẻ con nằm giữa chiều ngang của thẻ cha */
+    /* thẻ con ở đây là thẻ .modal-container và thẻ cha ở đây là thẻ .modal */
+    /* để hiểu rõ hơn về thuộc tính flexbox hay flex thì học tiếp f8 */
+    
+}
+
+.modal.open {
+    display: flex;
+}
+
+
+.modal-container {
+    background-color: #fff; 
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease 1s;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    padding: 17px 15px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.modal-close:hover {
+    opacity: 1;
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.modal-heading-icon {
+    padding-right: 17px;
+}
+
+
+.modal-body {
+    padding: 16px;
+    font-family: Lato, sans-serif;
+}
+
+.modal-lable {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+#buy-tickets {
+    width: 100%;
+    min-height: 45px;
+    background-color: #009688;
+    border: none;
+    font-family: Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#buy-tickets:hover {
+    color: #000;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.modal-footer {
+    padding: 17px 16px 34px 0;
+    float: right;
+    display: inline-block;
+}
+
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0px);
+    }
+}
+
+
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: rotateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
